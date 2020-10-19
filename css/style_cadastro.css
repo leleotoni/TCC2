@@ -1,0 +1,72 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+input{
+    /* width: 250px; */
+    margin: 05px;
+    border-radius: 10px;
+    font-size: 16pt;
+    padding: 10px 20px;
+    font-family: arial;
+}
+label{
+    font-family: arial;
+    color: blue;
+}
+input[type=file]{
+    border-radius: unset;
+    padding: unset;
+    margin: inherit;
+    width: auto;
+    font-family: arial;
+}
+input[type=submit]{
+    /* border-radius: unset; */
+    /* padding: unset; */
+    /* margin: inherit; */
+    /* width: auto; */
+    font-family: arial;
+}
+
+
+
+div#corpo-form{
+    width: 420px;
+
+}
+div#corpo-form p.description{
+    padding: 10px;
+}
+
+div#msg-sucesso{
+    width: 420px;
+    padding: 10px;
+    color: green;
+}
+
+div.msg-erro{
+    width: 420px;
+    padding: 10px;
+    color: red;
+
+}
+div #cadastro_bsl #corpo-form{
+    position: relative;
+    left: 37%;
+    top: 29%;
+    width: 320px;
+    height: 270px;
+}
+div #cadastro_bsl #corpo-form #form{
+    position: absolute;
+    display: block;
+}
+
+div #cadastro_bsl fieldset{
+    width: 300px;
+    height: 250px;
+}
+
