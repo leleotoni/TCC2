@@ -63,7 +63,7 @@
                     <?php   }
                             if(isset($informacoes))
                             { ?>
-                                <li role="presentation"><a href="#edicao_bsl" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-users"></i></span>Publicação BSL</a></li>
+                                <li role="presentation"><a href="#edicao_bsl" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-users"></i></span>Edição de BSL</a></li>
                     <?php   }
                             else
                             { ?>
@@ -107,54 +107,70 @@
                             
                         
                     </div>
-                    <div class="created">
-                        
-
-                    </div>
-                </div>
-                <div id="publicacoes" class="content fade">
-                    <?php
-                    include "publicacao.php";
-                    ?>
-                    
-                </div>
-                <div id="pesquisa" class="content fade">
-                    <?php
-                    include "pesquisa-bsl.php";
-                    ?>
-                </div>
-                
-                <div id="login" class="content fade">
-                    <?php
-                    include "login.php";
-                    ?>
                 </div>
                 <?php
-                    if(isset($informacoes))
-                    {
+                    if(isset($informacoes)) {
                 ?>
                         <div id="cadastro_bsl" class="content fade">
                             <?php 
 
                             include "cadastro-bsl.php";
                             ?>
-                            
-                            </div>
                         </div>
+                <?php
+                    }
+                    else {
+                ?>
+                        <div id="publicacoes" class="content fade">
+                            <?php
+                            include "publicacao.php";
+                            ?>
+                            
+                        </div>
+                <?php
+                    }
+                    if(isset($informacoes)) {
+                ?>
                         <div id="cadastro_usuario" class="content fade">
                             <?php
 
                             include "cadastro-usuario.php";
                             ?>
 
-                        </div>                
+                        </div>  
+                <?php
+                    }
+                    else {
+                ?>
+                        <div id="pesquisa" class="content fade">
+                            <?php
+                            include "pesquisa-bsl.php";
+                            ?>
+
+                        </div>
+                <?php
+                    }
+                    if(isset($informacoes)) {
+                ?>
                         <div id="edicao_bsl" class="content fade">
                             <?php
 
                             include "edicao-bsl.php";
                             ?>
                         </div>   
-                <?php 
+                <?php
+                    }
+                    else {
+                ?>
+                        <div id="login" class="content fade">
+
+
+                            <?php
+                            include "login.php";
+                            ?>
+
+                        </div>
+                <?php
                     }
                 ?>
             </div>

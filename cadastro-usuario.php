@@ -25,7 +25,7 @@
                     <button type="submit" class="form-control" value="Cadastrar"/>Cadastrar</button> 
                 </form>
             </div>
-    <?php }
+    <?php 
         if(isset($_POST['nome'])) {
             $nome = addslashes($_POST['nome']);
             $email = addslashes($_POST['email']);

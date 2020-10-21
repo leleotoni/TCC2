@@ -74,6 +74,13 @@ Class Usuario
 		$dados = $cmd->fetch();
 		return $dados;
 	}
+	public function buscarUsuario()
+	{
+		global $pdo;
+		$cmd = $pdo->query("SELECT * FROM users");
+		$dados = $cmd->fetchAll(PDO::FETCH_ASSOC);	
+		return $dados;
+	}
 }
 
 

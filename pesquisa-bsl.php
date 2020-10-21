@@ -1,9 +1,14 @@
 <?php
-    ob_start();
-   setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
-   date_default_timezone_set('America/Sao_Paulo');    
 
-?>		
+    ob_start();
+    require_once 'classes/bsl.php';
+    $b = new bsl;
+    $b->conectar("inss", "127.0.0.1", "root", "8800"); 
+    $busca = $b->buscarBsl();
+    setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
+    date_default_timezone_set('America/Sao_Paulo');    
+
+?>      
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -30,45 +35,42 @@
                     exit();
                 }
 
-                $numero = $_POST["Pesq"];
+                if(isset($_POST["Pesq"])){
 
+                    $numero = $_POST["Pesq"];
+                }
 
-
-                if ($sql = $mysqli->prepare("SELECT numero, data, arquivo FROM cad_bsl WHERE numero = ?")) {
+               if ($sql = $mysqli->prepare("SELECT numero, data, arquivo FROM cad_bsl WHERE numero = ?")) {
 
                     $sql->bind_param('i',$numero);
-
                     $sql->execute();
 
                     $sql->bind_result($numero, $data, $arquivo);
-
                     ?> 
                     <table class="table">
-                    <thead>
-                    <tr>
-                        <th>Número</th>
-                        <th>Data</th>
-                        <th>Ação</th>
-                    </tr>
-                    <tr> <?php
-                    while ($sql->fetch()) { ?>
-                    </tr>
-                        <td><?php echo $numero ?></td>
-                        <td><?php echo date('d/m/Y', strtotime($data))?></td>
-                        <td><?php echo "<a href=\"bsl/". $arquivo ."\" target='blank' >"?><button type="button" class="btn btn-xs btn-primary">Visualizar</button></td>
-                            
-                    </thead>
+                        <thead>
+                            <tr>
+                                <th>Número</th>
+                                <th>Data</th>
+                                <th>Ação</th>
+                            </tr>
+                            <tr> <?php
+                                while ($sql->fetch()) { ?>
+                            </tr>
+                                <td><?php echo $numero ?></td>
+                                <td><?php echo date('d/m/Y', strtotime($data))?></td>
+                                <td><?php echo "<a href=\"bsl/". $arquivo ."\" target='blank' >"?><button type="button" class="btn btn-xs btn-primary">Visualizar</button></td>
+                        </thead>
 
-                    </table> <?php
+                    </table> 
+                    <?php
 
+                                }
+                    $sql->close();
                     }
-                $sql->close();
-                }
 
-                $mysqli->close();
-                ?>
-
-
+                    $mysqli->close();
+                    ?>
             </pre>
 
 </body>

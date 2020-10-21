@@ -1,7 +1,7 @@
 <?php
 
     require_once 'classes/bsl.php';
-    $b = new bsl;
+    $b = new Bsl;
     $b->conectar("inss", "127.0.0.1", "root", "8800"); 
     $busca = $b->buscarBsl();
     $busca2 = $b->buscarBsl();

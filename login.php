@@ -15,11 +15,9 @@
 
 
 ?>
-                    <link rel="stylesheet" href="css/style_cadastro.css">
-				
-				    <div class="plugins-area">
+    <link rel="stylesheet" href="css/style_cadastro.css">
+
 					   <h1>Acesso Restrito</h1>
-				       <div id="acess">
                         <p class="description">Insira suas informações pessoais:</p>
                         
                         <form method="POST" class="login">
@@ -36,9 +34,7 @@
                             <button type="submit" class="btn btn-primary" value="LOGAR">Entrar</button> 
 
                         </fieldset> 
-                        </form>
-                    
-                        </div>  
+                        </form> 
                         <?php
                             if(isset($_POST['username']))
                             {
@@ -79,4 +75,3 @@
                             }
 
                         ?>
-				    </div> 
