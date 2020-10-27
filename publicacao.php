@@ -9,6 +9,7 @@
    date_default_timezone_set('America/Sao_Paulo');
 
 ?>
+    <link rel="stylesheet" href="css/style_cadastro.css">
         <h1>Publicações</h1>
                             <p>
                                 Boletins de Serviço Locais em ordem decrescente:

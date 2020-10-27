@@ -29,7 +29,7 @@
                         </tr>
                             <td><?php echo $dado["numero"]; ?></td>
                             <td><?php echo date('d/m/Y', strtotime($dado["data"]))?></td>
-                            <td><?php echo "<a href=\"bsl/". $dado["arquivo"]."\" target='blank' >"?><button type="button" class="btn btn-xs btn-primary">Visualizar</button> <button type="button" class="btn btn-xs btn-warning">Editar</button></td>
+                            <td><?php echo "<a href=\"bsl/". $dado["arquivo"]."\" target='blank' >"?><button type="button" class="btn btn-xs btn-primary">Visualizar</button>  <button type="button" class="btn btn-xs btn-warning" a href="#editar">Editar</button></td>
                             <?php  } ?>
                     </thead>
                 </table>
@@ -37,3 +37,18 @@
         </div>
         </pre> 
     </div> 
+    <!--
+    <div id="editar">
+        <div class="form-group col-md-3" style="width: 210px">
+            <a href="javascript:AlterImagem()"></a>
+        </div>
+        <form method="post" enctype="multipart/form-data" name="adiciona" action="" autocomplete="off">
+            <input type="file" name="bsl" value="" required>
+            <input type="submit" value="enviar" onsubmit="Checkfiles(this)" class="btn btn-info btn-sm">
+        </form>
+
+        <?php
+        //array_map('unlink', glob("bsl/". $dado["arquivo"].));
+        ?>
+    </div>
+    -->

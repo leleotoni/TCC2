@@ -42,12 +42,17 @@
                 <img src="img/inss-logo.png" alt="" />
             </div>
             <div class="left-content">
-                <ul role="tablist">
+                <ul class="menu" role="tablist">
                     <li role="presentation" class="active"><a href="#one" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-home"></i></span>Bem vindo</a></li>
                     <?php
                             if(isset($informacoes))
                             { ?>
-                                <li role="presentation"><a href="#cadastro_bsl" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-folder"></i></span>Cadastro BSL</a></li>
+                                <li role="presentation"><a href="#" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-folder"></i></span>Cadastro BSL</a>
+                                    <ul>
+                                        <li role="presentation"><a href="#edicao_bsl" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-folder"></i></span>Edição Bsl</a>
+                                    </ul>
+
+                                </li>
                     <?php   }
                             else
                             { ?>

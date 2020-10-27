@@ -20,7 +20,7 @@
                     <input type="date" class="form-control"name="data" maxlength="8"><br>
                     <label>Arquivo BSL:</label>
                     <input type="file" class="form-control-file" name="arquivo"><br/>
-                    <button type="submit" class="form-control" name="publicar'" value="Publicar BSL">Publicar BSL</button> 
+                    <button type="submit" class="btn btn-primary" name="publicar'" value="Publicar BSL">Publicar BSL</button> 
                 </fieldset> 
             </form>
         </div>

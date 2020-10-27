@@ -22,7 +22,7 @@
                     <input type="text" class="form-control" name="cargo" placeholder="Cargo" maxlength="50" /><br />
                     <input type="text" class="form-control" name="username" placeholder="Username" maxlength="25" /><br />
                     <input type="password" class="form-control" name="senha" placeholder="Senha" maxlength="32" /><br />
-                    <button type="submit" class="form-control" value="Cadastrar"/>Cadastrar</button> 
+                    <button type="submit" class="btn btn-primary" value="Cadastrar"/>Cadastrar</button> 
                 </form>
             </div>
     <?php 

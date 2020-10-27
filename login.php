@@ -1,5 +1,4 @@
 <?php
-    ob_start();
 
     require_once 'classes/usuarios.php';
 
@@ -15,7 +14,7 @@
 
 
 ?>
-    <link rel="stylesheet" href="css/style_cadastro.css">
+    
 
 					   <h1>Acesso Restrito</h1>
                         <p class="description">Insira suas informações pessoais:</p>

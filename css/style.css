@@ -148,7 +148,7 @@ img {
     display: block;
 }
 
-pre {line-height: 10px;text-align: center;padding: 0px;/* margin-top: 35px; */font-size: 15px;font-family: sans-serif;/* margin-bottom: 35px; */}
+pre {line-height: 2px;text-align: center;padding: 0px;/* margin-top: 35px; */font-size: 15px;font-family: sans-serif;/* margin-bottom: 35px; */}
 
 
 .content {}
@@ -209,4 +209,29 @@ th{
     height: 35px;
 }
 
+.menu{
+list-style:none;
+}
+.menu li{
+position:relative;
+/*float:left;*/
+}
+.menu li a:hover{
+    -moz-box-shadow:0 3px 10px 0 #CCC;
+-webkit-box-shadow:0 3px 10px 0 #ccc;
+/*text-shadow:0px 0px 5px #fff;*/
+}
+
+.menu li  ul{
+position:absolute;
+display:none;
+}
+
+.menu li:hover ul, .menu li.over ul{display:block;}
+
+.menu li ul li{
+
+display:block;
+
+}
 

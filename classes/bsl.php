@@ -49,8 +49,22 @@ Class Bsl
 		return $dados;
 	}
 
-	public function pesquisaBsl()
+	public function pesquisaBsl($numero)
 	{
+		global $pdo;
+		$cmd = $pdo->prepare("SELECT numero, data, arquivo FROM cad_bsl WHERE numero = :n");
+		$cmd->bindValue(':n',$numero);
+        $cmd->execute();
+		if($cmd->rowCount()<0)
+		{
+			echo "Nâo existe";
+			return false;//não existe
+		}
+		else
+		{
+			$result = $cmd->fetchAll(PDO::FETCH_ASSOC);
+			return $result;
+		}
 
 	}
 
