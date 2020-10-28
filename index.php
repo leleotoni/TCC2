@@ -32,6 +32,8 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/tree-viewer.css">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -41,46 +43,51 @@
             <div class="logo">
                 <img src="img/inss-logo.png" alt="" />
             </div>
-            <div class="left-content">
-                <ul class="menu" role="tablist">
-                    <li role="presentation" class="active"><a href="#one" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-home"></i></span>Bem vindo</a></li>
-                    <?php
-                            if(isset($informacoes))
-                            { ?>
-                                <li role="presentation"><a href="#" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-folder"></i></span>Cadastro BSL</a>
-                                    <ul>
-                                        <li role="presentation"><a href="#edicao_bsl" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-folder"></i></span>Edição Bsl</a>
-                                    </ul>
+            <nav class='menuLateral'>
+                <div class="left-content">
+                    <ul class="menu" role="tablist">
+                        <li role="presentation" class="active"><a href="#one" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-home"></i></span>Bem vindo</a></li>
+                        <?php
+                                if(isset($informacoes))
+                                { ?>
+                                    <li role="presentation"><a href="#" class="bsl"aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-file"></i></span>BSL<span id="seta" class="material-icons">arrow_drop_down</span></a>
+                                        <ul class="itensBsl">
+                                            <li role="presentation"><a href="#cadastro_bsl" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-file"></i></span>Cadastrar BSL</a>
+                                            <li role="presentation"><a href="#tabela_bsl" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-table"></i></span>Numeração BSL</a>
+                                            <li role="presentation"><a href="#edicao_bsl" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-pencil"></i></span>Editar BSL</a>
+                                        </ul>
+                                    </li>
+                        <?php   }
+                                else
+                                { ?>
+                                    <li role="presentation"><a href="#publicacoes" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-folder"></i></span>Publicações</a></li>
+                        <?php   }
+                                if(isset($informacoes))
+                                { ?>
+                                    <li role="presentation"><a href="#" class="usuario"aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-users"></i></span>Usuário<span class="material-icons">arrow_drop_down</span></a>
+                                        <ul class="itensUsuario">
+                                            <li role="presentation"><a href="#cadastro_usuario" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-users"></i></span>Cadastro</a>
+                                            <li role="presentation"><a href="#editar_usuario" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-pencil"></i></span>Editar/Excluir</a>
+                                        </ul>
+                                    </li>
+                        <?php   }
+                                else
+                                { ?>
+                                    <li role="presentation"><a href="#pesquisa" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-search"></i></span>Pesquisa BSL</a></li>
+                        <?php   }
+                                if(isset($informacoes))
+                                { ?>
+                                    <li role="presentation"><a href="exit.php" aria-controls="home" role="tab"><span><i class="fa fa-sign-out"></i></span>Sair</a></li>
+                        <?php   }
+                                else
+                                { ?>
+                                    <li role="presentation"><a href="#login" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-user"></i></span>Acesso Privado</a></li>
+                        <?php   }
 
-                                </li>
-                    <?php   }
-                            else
-                            { ?>
-                                <li role="presentation"><a href="#publicacoes" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-folder"></i></span>Publicações</a></li>
-                    <?php   }
-                            if(isset($informacoes))
-                            { ?>
-                                <li role="presentation"><a href="#cadastro_usuario" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-search"></i></span>Cadastro Usuário</a></li>
-                    <?php   }
-                            else
-                            { ?>
-                                <li role="presentation"><a href="#pesquisa" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-search"></i></span>Pesquisa BSL</a></li>
-                    <?php   }
-                            if(isset($informacoes))
-                            { ?>
-                                <li role="presentation"><a href="#edicao_bsl" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-users"></i></span>Edição de BSL</a></li>
-                    <?php   }
-                            else
-                            { ?>
-                                <li role="presentation"><a href="#login" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-users"></i></span>Acesso Privado</a></li>
-                    <?php   }
-                            if(isset($informacoes))
-                            { ?>
-                                <li role="presentation"><a href="exit.php" aria-controls="home" role="tab"><span><i class="fa fa-support"></i></span>Sair</a></li>
-                    <?php   }
-                            ?>
-                </ul>
-            </div>
+                                ?>
+                    </ul>
+                </div>
+            </nav>
         </div>
     </div>
         <div class="right-side">
@@ -186,6 +193,7 @@
 	<script src="js/jstree.min.js"></script>
     <script src="js/jstree.active.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/script.js"></script>
 </body>
 <?php ob_end_flush(); ?>
 </html>

@@ -3,21 +3,6 @@
     padding: 0px;
 }
 
-
-/*
-*::-moz-selection {
-  background-attachment: scroll;
-  background-clip: border-box;
-  background-color: #ef4836;
-  background-image: none;
-  background-origin: padding-box;
-  background-position: 0 0;
-  background-repeat: repeat;
-  background-size: auto auto;
-  color: #fff;
-}
-*/
-
 h1,
 h2,
 h3,
@@ -70,18 +55,14 @@ img {
     text-align: right;
 }
 
-.left-content {}
-
-.left-content ul {}
-
 .left-content ul li {
     border-bottom: 1px solid #006DF0;
     display: block;
-    height: 50px;
+
 }
 
 .left-content ul li.active {
-    background-color: #006DF0;
+    background-color: solid #ffffff;
 }
 
 .left-content ul li.active a span {
@@ -151,8 +132,6 @@ img {
 pre {line-height: 2px;text-align: center;padding: 0px;/* margin-top: 35px; */font-size: 15px;font-family: sans-serif;/* margin-bottom: 35px; */}
 
 
-.content {}
-
 .content a {
     color: #006DF0;
 }
@@ -168,10 +147,6 @@ pre {line-height: 2px;text-align: center;padding: 0px;/* margin-top: 35px; */fon
 #one span {
     color: #006DF0;
 }
-
-.content#source {}
-
-.content#source > ul li {}
 
 .content#source > ul li span {
     font-weight: 700;
@@ -197,7 +172,6 @@ input{
 }
 label{
     font-family: arial;
-    
 }
 
 th{
@@ -209,29 +183,27 @@ th{
     height: 35px;
 }
 
-.menu{
-list-style:none;
-}
-.menu li{
-position:relative;
-/*float:left;*/
-}
 .menu li a:hover{
     -moz-box-shadow:0 3px 10px 0 #CCC;
--webkit-box-shadow:0 3px 10px 0 #ccc;
-/*text-shadow:0px 0px 5px #fff;*/
+    -webkit-box-shadow:0 3px 10px 0 #ccc;
+
 }
 
-.menu li  ul{
-position:absolute;
-display:none;
+
+
+.menuLateral ul ul li a{
+    padding-left: 50px;
+}
+.menuLateral ul ul{
+    background-color: #363636;
+    display: none;
 }
 
-.menu li:hover ul, .menu li.over ul{display:block;}
+.menuLateral ul .itensBsl.mostra{
+    display: block;
+}
 
-.menu li ul li{
-
-display:block;
-
+.menuLateral ul .itensUsuario.mostra{
+    display: block;
 }
 
