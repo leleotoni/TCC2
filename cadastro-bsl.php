@@ -2,11 +2,9 @@
     require_once 'classes/bsl.php';
     $b = new bsl;
     $b->conectar("inss", "127.0.0.1", "root", "8800"); 
-    $busca = $b->buscarBsl();
-   /* $baixa = $b->baixarBsl();    */
 
-   setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
-   date_default_timezone_set('America/Sao_Paulo');
+    setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
+    date_default_timezone_set('America/Sao_Paulo');
 
 ?>                
     <h1>Cadastro BSL</h1>

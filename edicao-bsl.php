@@ -4,11 +4,10 @@
     $b = new Bsl;
     $b->conectar("inss", "127.0.0.1", "root", "8800"); 
     $busca = $b->buscarBsl();
-    $busca2 = $b->buscarBsl();
-   /* $baixa = $b->baixarBsl();    */
 
-   setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
-   date_default_timezone_set('America/Sao_Paulo');
+
+    setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
+    date_default_timezone_set('America/Sao_Paulo');
 
 
 ?>
@@ -29,7 +28,7 @@
                         </tr>
                             <td><?php echo $dado["numero"]; ?></td>
                             <td><?php echo date('d/m/Y', strtotime($dado["data"]))?></td>
-                            <td><?php echo "<a href=\"bsl/". $dado["arquivo"]."\" target='blank' >"?><button type="button" class="btn btn-xs btn-primary">Visualizar</button>  <button type="button" class="btn btn-xs btn-warning" a href="#editar">Editar</button></td>
+                            <td><button type="button" class="btn btn-xs btn-warning" a href="#editar">Editar</button></td>
                             <?php  } ?>
                     </thead>
                 </table>
@@ -37,6 +36,7 @@
         </div>
         </pre> 
     </div> 
+    
     <!--
     <div id="editar">
         <div class="form-group col-md-3" style="width: 210px">

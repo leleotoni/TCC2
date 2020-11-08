@@ -136,11 +136,17 @@ pre {line-height: 2px;text-align: center;padding: 0px;/* margin-top: 35px; */fon
     color: #006DF0;
 }
 
-.content h1 {
+.content h1{
     text-transform: uppercase;
     font-weight: 700;
     padding-bottom: 35px;
     margin-bottom: 35px;
+    border-bottom: 1px solid #ddd;
+}
+.content h2{
+    font-weight: 500;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
     border-bottom: 1px solid #ddd;
 }
 

@@ -5,7 +5,7 @@
 
     $u= new Usuario;
     $u->conectar("inss", "127.0.0.1", "root", "8800");
-    $busca = $b->buscarUsuario();
+    $busca = $u->buscarUsuario();
     setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
    date_default_timezone_set('America/Sao_Paulo');
 
@@ -31,7 +31,7 @@
                                                 </tr>
                                                     <td><?php echo $dado["nome"]; ?></td>
                                                     <td><?php echo $dado["cargo"]; ?>
-                                                    <td><?php echo ""?><button type="button" a href="#editar" class="btn btn-xs btn-primary">Editar</button></td> <button type="button" class="btn btn-xs btn-warning">Editar</button></td>
+                                                    <td><?php echo ""?><button id="editar" type="button" class="btn btn-xs btn-warning">Editar</button></td>
                                                 <?php  } ?>
                                             </thead>
                                             <tbody>
@@ -42,10 +42,9 @@
                                         </table>
                                         <div id="editar">
                                             <?php
-                                            /*$dado["id"];
-                                            $sql_code = "DELETE FROM users WHERE id='%$dado%'";
+                                            $dado["id"];
+                                            $sql_code = "DELETE FROM users WHERE id=".$dado["id"];
 
-                                            echo "<script> alert ('Excluido com sucesso'); location.href='index.php'; </script>";*/
                                             ?>
                                         </div>
                                     </div>

@@ -164,6 +164,16 @@
                     }
                     if(isset($informacoes)) {
                 ?>
+                        <div id="editar_usuario" class="content fade">
+                            <?php
+                            include "editar-usuarios.php";
+                            ?>
+                        </div>
+                        <div id="tabela_bsl" class="content fade">
+                            <?php
+                            include "tabela-bsl.php";
+                            ?>
+                        </div>
                         <div id="edicao_bsl" class="content fade">
                             <?php
 

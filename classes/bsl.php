@@ -68,6 +68,57 @@ Class Bsl
 
 	}
 
+	public function editarBsl($id)
+	{
+		global $pdo;
+		$cmd = $pdo->prepare("SELECT numero, data, arquivo FROM cad_bsl WHERE id_bsl = :id");
+		$cmd->bindValue(":id",$id);
+		$cmd->execute();
+		if($cmd->rowCount()<0)
+		{
+			return false;//ja cadastrado
+		}
+		else
+		{
+			$cmd=$pdo->prepare("UPDATE cad_bsl SET arquivo = :a WHERE numero = :n");
+			$cmd->bindValue(":n", $numero);
+			$cmd->bindValue(":a", $arquivo);
+			$cmd->execute();
+			return true;
+		}
+
+	}
+
+	public function cadastrarTab($semestre, $ano, $arquivo)
+	{
+		global $pdo;
+		$cmd = $pdo->prepare("SELECT id FROM tabela_bsl WHERE semestre = :s");
+		$cmd->bindValue(":s",$semestre);
+		$cmd->execute();
+		if($cmd->rowCount()>0)
+		{
+			return false;//ja cadastrado
+		}
+		else
+		{
+
+			$cmd=$pdo->prepare("INSERT INTO tabela_bsl(semestre, ano, arquivo) VALUES (:s, :a, :ar)");
+			$cmd->bindValue(":s", $semestre);
+			$cmd->bindValue(":a", $ano);
+			$cmd->bindValue(":ar", $arquivo);
+			$cmd->execute();
+			return true;
+		}
+
+	}
+	public function buscarTabela()
+	{
+		global $pdo;
+		$cmd = $pdo->query("SELECT * FROM tabela_bsl");
+		$dados = $cmd->fetchAll(PDO::FETCH_ASSOC);	
+		return $dados;
+	}
+
 
 }
 ?>	
