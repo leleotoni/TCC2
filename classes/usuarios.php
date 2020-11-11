@@ -81,6 +81,29 @@ Class Usuario
 		$dados = $cmd->fetchAll(PDO::FETCH_ASSOC);	
 		return $dados;
 	}
+
+	public function alterar($id_user, $nome, $email, $cargo, $username, $senha)
+	{
+		global $pdo;
+		$sql=$pdo->prepare("UPDATE users SET nome=:n, email=:e, cargo=:c, username=:u, senha=:s WHERE id_user=:id");
+			$sql->bindValue(":id", $id_user);
+			$sql->bindValue(":n", $nome);
+			$sql->bindValue(":e", $email);
+			$sql->bindValue(":c", $cargo);
+			$sql->bindValue(":u", $username);
+			$sql->bindValue(":s", md5($senha));
+			$sql->execute();
+			return true;
+
+	}
+	public function deletar($id_user)
+	{
+		global $pdo;
+		$sql=$pdo->prepare("DELETE FROM users WHERE id_user=:id");
+		$sql->bindValue(":id", $id_user);
+		$sql->execute();
+		return true;
+	}
 }
 
 

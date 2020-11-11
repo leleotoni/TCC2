@@ -11,7 +11,13 @@
 
 
 ?>
-    <div class="plugins-area">
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+ <div class="plugins-area">
         <h1>Editar BSL</h1>
         <pre>
         <div class="row">
@@ -28,7 +34,7 @@
                         </tr>
                             <td><?php echo $dado["numero"]; ?></td>
                             <td><?php echo date('d/m/Y', strtotime($dado["data"]))?></td>
-                            <td><button type="button" class="btn btn-xs btn-warning" a href="#editar">Editar</button></td>
+                            <td><button id="editar" type="button" class="btn btn-xs btn-warning" data-toggle="modal" data-target="#editarBsl" data-whateverid="<?php echo $dado['id_bsl']; ?>"data-whatevernum="<?php echo $dado['numero']; ?>" data-whateverdata="<?php echo date('d/m/Y', strtotime($dado["data"]))?>" data-whateverfile="<?php echo $dado["arquivo"]; ?>">Editar BSL</button></td>
                             <?php  } ?>
                     </thead>
                 </table>
@@ -36,19 +42,59 @@
         </div>
         </pre> 
     </div> 
-    
-    <!--
-    <div id="editar">
-        <div class="form-group col-md-3" style="width: 210px">
-            <a href="javascript:AlterImagem()"></a>
+    <div class="modal fade" id="editarBsl" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Editar BSL</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" action="http://localhost/teste/alteracao-bsl.php" enctype="multipart/form-data">
+                        <input type="hidden" name="id_bsl" id="id_bsl"></input>
+                        <div class="form-group">
+                            <label for="recipient-numero" class="col-form-label">Numero:</label>
+                            <input name="numero" type="text" class="form-control" id="recipient-numero">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-data" class="col-form-label">Data:</label>
+                            <input name="data" type="date" class="form-control" id="recipient-data"></input>
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-file" class="col-form-label">Arquivo:</label>
+                            <input name="file" type="file" class="form-control" id="recipient-file"></input>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-danger">Alterar Dados</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-        <form method="post" enctype="multipart/form-data" name="adiciona" action="" autocomplete="off">
-            <input type="file" name="bsl" value="" required>
-            <input type="submit" value="enviar" onsubmit="Checkfiles(this)" class="btn btn-info btn-sm">
-        </form>
-
-        <?php
-        //array_map('unlink', glob("bsl/". $dado["arquivo"].));
-        ?>
     </div>
-    -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    $('#editarBsl').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget) // Button that triggered the modal
+      var recipientid = button.data('whateverid')
+      var recipientnum = button.data('whatevernum')
+      var recipientdata = button.data('whateverdata') 
+      var recipientfile = button.data('whateverfile')
+
+      var modal = $(this)
+      modal.find('.modal-title').text('Alterar Dados do BSL ' + recipientnum)
+      modal.find('#id_bsl').val(recipientid)
+      modal.find('#recipient-numero').val(recipientnum)
+      modal.find('#recipient-data').val(recipientdata)
+      modal.find('#recipient-file').val(recipientfile)
+    })
+    </script>
+
+</body>
+</html>
+   

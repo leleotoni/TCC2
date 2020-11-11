@@ -118,6 +118,18 @@ Class Bsl
 		$dados = $cmd->fetchAll(PDO::FETCH_ASSOC);	
 		return $dados;
 	}
+	public function alterarBsl($id_bsl, $numero, $data, $arquivo)
+	{
+		global $pdo;
+		$sql=$pdo->prepare("UPDATE cad_bsl SET numero=:n, data=:d, arquivo=:a WHERE id_bsl=:id");
+			$sql->bindValue(":id", $id_bsl);
+			$sql->bindValue(":n", $numero);
+			$sql->bindValue(":d", $data);
+			$sql->bindValue(":a", $arquivo);
+			$sql->execute();
+			return true;
+
+	}
 
 
 }

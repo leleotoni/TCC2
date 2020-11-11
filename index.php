@@ -171,7 +171,7 @@
                         </div>
                         <div id="tabela_bsl" class="content fade">
                             <?php
-                            include "tabela-bsl.php";
+                            include "exib-tabela-bsl.php";
                             ?>
                         </div>
                         <div id="edicao_bsl" class="content fade">
