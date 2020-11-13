@@ -3,6 +3,9 @@
 	$b = new Bsl;
 	$b->conectar("inss", "127.0.0.1", "root", "8800");
 
+	setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
+    date_default_timezone_set('America/Sao_Paulo');
+
 	$upload="bsl/";
     $filenvo= 'BSL GEXJFR Nº '. $_POST['numero']. ' de ' . strftime('%d de %B de %Y', strtotime($_POST["data"])) . '.pdf';
             $file= $upload . $filenvo;
@@ -29,11 +32,10 @@
         }  
       }
 
-   echo "$id_bsl - $numero - $data - $arquivo";
-   /* echo "
+    echo "
     	<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/teste/index.php'>
     	<script type=\"text/javascript\">
     		alert(\"Alterado com sucesso!.\");
     	</script>
-    ";*/
+    ";
  ?>

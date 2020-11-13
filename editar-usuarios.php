@@ -14,11 +14,13 @@
 <html>
 <head>
     <title></title>
+        <link rel="stylesheet" href="css/style_cadastro.css">
 </head>
 <body>
     <h1>Editar Usuários</h1>
     <p>Usuários Cadastrados</p>
     <pre>
+        <div class="editar">
         <div class="row">
             <div class="col-md-10">
                 <table class="table">
@@ -26,20 +28,22 @@
                         <tr>
                             <th>Nome</th>
                             <th>Cargo</th>
-                            <th>Ação</th>
+                            <th>Editar</th>
+                            <th>Apagar</th>
                         </tr>
                         <tr>
                             <?php foreach ($busca as $dado) {?>   
                         </tr>
                             <td><?php echo $dado["nome"]; ?></td>
-                            <td><?php echo $dado["cargo"]; ?>
-                            <td><button id="editar" type="button" class="btn btn-xs btn-warning" data-toggle="modal" data-target="#editarUsu" data-whateverid="<?php echo $dado["id_user"]; ?>" data-whatevernome="<?php echo $dado["nome"]; ?>" data-whateveremail="<?php echo $dado["email"]; ?>" data-whatevercargo="<?php echo $dado["cargo"]; ?>" data-whateveruser="<?php echo $dado["username"]; ?>" data-whateversenha="<?php echo $dado["senha"]; ?>">Editar</button> </td> 
-                            <td><button id="excluir" type="button" class="btn btn-xs btn-danger" data-toggle="modal" data-target="#excluirUsu" data-whateverid="<?php echo $dado['id_user']; ?>">Apagar</button></td>
+                            <td><?php echo $dado["cargo"]; ?></td>
+                            <td><button id="editar" type="button" data-toggle="modal" data-target="#editarUsu" data-whateverid="<?php echo $dado["id_user"]; ?>" data-whatevernome="<?php echo $dado["nome"]; ?>" data-whateveremail="<?php echo $dado["email"]; ?>" data-whatevercargo="<?php echo $dado["cargo"]; ?>" data-whateveruser="<?php echo $dado["username"]; ?>" data-whateversenha="<?php echo $dado["senha"]; ?>"><img src="img/editar.png"></button> </td> 
+                            <td><button id="excluir" type="button" data-toggle="modal" data-target="#excluirUsu" data-whateverid="<?php echo $dado['id_user']; ?>"><img src="img/lixo.png"></button></td>
                             <?php  } ?>
                     </thead>
                 </table>
             </div>
         </div>
+    </div>
     </pre>
     <div class="modal fade" id="editarUsu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">

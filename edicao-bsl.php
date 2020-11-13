@@ -15,11 +15,13 @@
 <html>
 <head>
     <title></title>
+    <link rel="stylesheet" href="css/style_cadastro.css">
 </head>
 <body>
  <div class="plugins-area">
         <h1>Editar BSL</h1>
         <pre>
+            <div class="editar">
         <div class="row">
             <div class="col-md-12">
                 <table class="table">
@@ -27,19 +29,22 @@
                         <tr>
                             <th>Número</th>
                             <th>Data</th>
-                            <th>Ação</th>
+                            <th>Visualizar</th>
+                            <th>Editar BSL</th>
                         </tr>
                         <tr>
                             <?php foreach ($busca as $dado) {?>   
                         </tr>
                             <td><?php echo $dado["numero"]; ?></td>
                             <td><?php echo date('d/m/Y', strtotime($dado["data"]))?></td>
-                            <td><button id="editar" type="button" class="btn btn-xs btn-warning" data-toggle="modal" data-target="#editarBsl" data-whateverid="<?php echo $dado['id_bsl']; ?>"data-whatevernum="<?php echo $dado['numero']; ?>" data-whateverdata="<?php echo date('d/m/Y', strtotime($dado["data"]))?>" data-whateverfile="<?php echo $dado["arquivo"]; ?>">Editar BSL</button></td>
+                            <td><?php echo "<a href=\"bsl/". $dado["arquivo"]."\" target='blank' >"?><button type="button" class="btn btn-xs btn-primary">Visualizar</button></td>
+                            <td><button id="editar" type="button" data-toggle="modal" data-target="#editarBsl" data-whateverid="<?php echo $dado['id_bsl']; ?>"data-whatevernum="<?php echo $dado['numero']; ?>" data-whateverdata="<?php echo date('d/m/Y', strtotime($dado["data"]))?>" data-whateverfile="<?php echo $dado["arquivo"]; ?>"><img src="img/editar.png"></button></td>
                             <?php  } ?>
                     </thead>
                 </table>
             </div>
         </div>
+    </div>
         </pre> 
     </div> 
     <div class="modal fade" id="editarBsl" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -64,7 +69,7 @@
                         </div>
                         <div class="form-group">
                             <label for="recipient-file" class="col-form-label">Arquivo:</label>
-                            <input name="file" type="file" class="form-control" id="recipient-file"></input>
+                            <input name="arquivo" type="file" class="form-control" id="recipient-file"></input>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
