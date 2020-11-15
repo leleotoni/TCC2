@@ -37,7 +37,7 @@
                         </tr>
                             <td><?php echo $dado["numero"]; ?></td>
                             <td><?php echo date('d/m/Y', strtotime($dado["data"]))?></td>
-                            <td><?php echo "<a href=\"bsl/". $dado["arquivo"]."\" target='blank' >"?><button type="button" class="btn btn-xs btn-primary">Visualizar</button></td>
+                            <td><?php echo "<a href=\"bsl/". $dado["arquivo"]."\" target='blank' >"?><button type="button" ><img src="img/visu.png"></button></td>
                             <td><button id="editar" type="button" data-toggle="modal" data-target="#editarBsl" data-whateverid="<?php echo $dado['id_bsl']; ?>"data-whatevernum="<?php echo $dado['numero']; ?>" data-whateverdata="<?php echo date('d/m/Y', strtotime($dado["data"]))?>" data-whateverfile="<?php echo $dado["arquivo"]; ?>"><img src="img/editar.png"></button></td>
                             <?php  } ?>
                     </thead>

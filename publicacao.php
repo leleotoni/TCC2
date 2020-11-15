@@ -22,14 +22,14 @@
                                                 <tr>
                                                     <th>Número</th>
                                                     <th>Data</th>
-                                                    <th>Ação</th>
+                                                    <th>Visualizar</th>
                                                 </tr>
                                                 <tr>
                                                 <?php foreach ($busca as $dado) {?>   
                                                 </tr>
                                                     <td><?php echo $dado["numero"]; ?></td>
                                                     <td><?php echo date('d/m/Y', strtotime($dado["data"]))?></td>
-                                                    <td><?php echo "<a href=\"bsl/". $dado["arquivo"]."\" target='blank' >"?><button type="button" class="btn btn-xs btn-primary">Visualizar</button></td>
+                                                    <td><?php echo "<a href=\"bsl/". $dado["arquivo"]."\" target='blank' >"?><button type="button"><img src="img/visu.png"></button></td>
                                                 <?php  } ?>
                                             </thead>
                                             <tbody>

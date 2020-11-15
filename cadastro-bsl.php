@@ -6,20 +6,25 @@
     setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
     date_default_timezone_set('America/Sao_Paulo');
 
-?>                
+?>            
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+    <link rel="stylesheet" href="css/style_cadastro.css">    
+</head>
+<body>
     <h1>Cadastro BSL</h1>
     <p> Preencha o formulário com atenção! </p>
-    <div class="col-auto">
         <div id="corpo-form">
             <form  id="form" method="POST" enctype="multipart/form-data">   
-                <fieldset>
                     <label>Digite o número do BSL:</label><input type="text" class="form-control" name="numero" maxlength="3"><br>
                     <label>Informe a data do BSL:</label><br/>
                     <input type="date" class="form-control"name="data" maxlength="8"><br>
                     <label>Arquivo BSL:</label>
                     <input type="file" class="form-control-file" name="arquivo"><br/>
                     <button type="submit" class="btn btn-primary" name="publicar'" value="Publicar BSL">Publicar BSL</button> 
-                </fieldset> 
             </form>
         </div>
         <?php
@@ -73,4 +78,8 @@
             }
         }
         ?>
-    </div>
+            
+
+</body>
+</html>
+    

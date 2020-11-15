@@ -57,22 +57,19 @@ div.msg-erro{
     color: red;
 
 }
-div #cadastro_bsl #corpo-form{
+div #exibir{
     position: relative;
     left: 37%;
     top: 29%;
     width: 320px;
     height: 270px;
 }
-div #cadastro_bsl #corpo-form #form{
+div #exibir #exibir-tab{
     position: absolute;
     display: block;
 }
 
-div #cadastro_bsl fieldset{
-    width: 300px;
-    height: 250px;
-}
+
 
 pre {line-height: 9px;text-align: center;padding: 0px;/* margin-top: 35px; */font-size: 15px;font-family: sans-serif;/* margin-bottom: 35px; */}
 

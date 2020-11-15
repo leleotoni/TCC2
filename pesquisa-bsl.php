@@ -22,7 +22,7 @@
                             <tr>
                                 <th>Número</th>
                                 <th>Data</th>
-                                <th>Ação</th>
+                                <th>Visualizar</th>
                                 </tr>
                             <?php
                                 if(isset($_POST['Pesq'])) {
@@ -33,7 +33,7 @@
                                         <tr>
                                         <td><?php echo $dados["numero"] ?></td>
                                         <td><?php echo date('d/m/Y', strtotime($dados["data"]))?></td>
-                                        <td><?php echo "<a href=\"bsl/". $dados["arquivo"] ."\" target='blank' >"?><button type="button" class="btn btn-xs btn-primary">Visualizar</button></td>
+                                        <td><?php echo "<a href=\"bsl/". $dados["arquivo"] ."\" target='blank' >"?><button type="button"><img src="img/visu.png"></button></td>
                                         </tr>
                                             <?php                                          
                                     }

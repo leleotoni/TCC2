@@ -16,14 +16,15 @@
     <link rel="stylesheet" href="css/style_cadastro.css">
         <h1>Tabela Numeração BSL</h1>
             <pre>
+                <div class="exibir">
                 <div class="row">
                     <div class="col-md-10">
-                        <table class="table">
+                        <table class="table" id="exibir-tab">
                             <thead>
                                 <tr>
                                     <th>Ano</th>
                                     <th>Semestre</th>
-                                    <th>Ação</th>
+                                    <th>Visualizar</th>
                                 </tr>
                                 <tr>
                                     <?php     
@@ -32,7 +33,7 @@
                                 </tr>
                                         <td><?php echo $dado["semestre"]; ?></td>
                                         <td><?php echo $dado["ano"];?></td>
-                                        <td><?php echo "<a href=\"bsl/tabela/". $dado["arquivo"]."\" target='blank' >"?><button type="button" class="btn btn-xs btn-primary">Visualizar</button></td>
+                                        <td><?php echo "<a href=\"bsl/tabela/". $dado["arquivo"]."\" target='blank' >"?><button type="button"><img src="img/visu.png"></button></td>
                                     <?php  } ?>
                             </thead>
                             <tbody>
@@ -41,6 +42,7 @@
                         </table>
                     </div>
                 </div>
+            </div>
             </pre> 
             <button id="cadastrar" type="button" class="btn btn-xs btn-primary" data-toggle="modal" data-target="#cadastrarTab" data-whatever="">Cadastrar Nova Tabela</button>
             <div class="modal fade" id="cadastrarTab" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
