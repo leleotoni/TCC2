@@ -10,16 +10,6 @@
         $informacoes = $u->buscarDadosUser($_SESSION['id_user']);
     }
 
-    
-    require_once 'classes/bsl.php';
-    $b = new bsl;
-    $b->conectar("inss", "127.0.0.1", "root", "8800"); 
-    $busca = $b->buscarBsl();
-    $busca2 = $b->buscarBsl();
-
-    setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
-    date_default_timezone_set('America/Sao_Paulo');
-
 ?>
 
 <!DOCTYPE html>
@@ -99,19 +89,20 @@
                             <?php
                             if(isset($_SESSION['id_user']))
                             { ?>
-                                <p>
+                                <h4>
                                     <?php
                                     echo "Olá! ";
                                     echo $informacoes['nome'];
                                     echo " , seja bem vindo(a)!";
                                     ?>
-                                </p>
+                                </h4>
                             <?php   }
                             else
                             { ?>
-                                <p>
-                            Para acessar BSL's publicados clique no Menu "Publicações"
-                                 </p>
+                                <h4>
+                                    Bem Vindo!!<br>
+                                    Este site é destinado para acesso aos Boletins de Serviço Local da Gerência Executiva do INSS de Juiz de Fora - MG.
+                                 </h4>
 
                             <?php  }
 

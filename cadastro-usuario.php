@@ -13,7 +13,7 @@
 
 ?>
     <h1> Cadastro de Usuário </h1>
-    <div>Cadastre apenas usuários que tem autorização na formatação do BSL</div>
+    <h4>Cadastre apenas usuários que tem autorização na formatação do BSL</h4>
     <br/>
             <div id="corpo-form">
                 <form method="post" id="formulariocad">    

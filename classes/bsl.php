@@ -130,6 +130,14 @@ Class Bsl
 			return true;
 
 	}
+	public function deletar($id)
+	{
+		global $pdo;
+		$sql=$pdo->prepare("DELETE FROM tabela_bsl WHERE id=:id");
+		$sql->bindValue(":id", $id);
+		$sql->execute();
+		return true;
+	}
 
 
 }

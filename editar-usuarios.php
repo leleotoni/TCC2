@@ -18,7 +18,6 @@
 </head>
 <body>
     <h1>Editar Usuários</h1>
-    <p>Usuários Cadastrados</p>
     <pre>
         <div class="editar">
         <div class="row">

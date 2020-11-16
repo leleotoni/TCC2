@@ -11,9 +11,9 @@
 ?>
     <link rel="stylesheet" href="css/style_cadastro.css">
         <h1>Publicações</h1>
-                            <p>
+                            <h4>
                                 Boletins de Serviço Locais em ordem decrescente:
-                            </p>
+                            </h4>
                                 <pre>
                                 <div class="row">
                                     <div class="col-md-10">

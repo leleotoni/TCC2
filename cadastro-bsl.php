@@ -16,7 +16,7 @@
 </head>
 <body>
     <h1>Cadastro BSL</h1>
-    <p> Preencha o formulário com atenção! </p>
+    <h4> Preencha o formulário com atenção! </h4>
         <div id="corpo-form">
             <form  id="form" method="POST" enctype="multipart/form-data">   
                     <label>Digite o número do BSL:</label><input type="text" class="form-control" name="numero" maxlength="3"><br>

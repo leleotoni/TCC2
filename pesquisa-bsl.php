@@ -10,7 +10,7 @@
 ?>     
     <link rel="stylesheet" href="css/style_cadastro.css">
     <h1> Pesquisa BSL </h1>
-        <div>A pesquisa poderá ser feito número do BSL</div>
+        <h4>A pesquisa poderá ser feito número do BSL</h4>
             <pre>
                 <form method="POST" action="">
                     <label>Buscar: </label>

@@ -17,7 +17,7 @@
     
 
 					   <h1>Acesso Restrito</h1>
-                        <p class="description">Insira suas informações pessoais:</p>
+                        <h4 class="description">Insira suas informações pessoais:</h4>
                         
                         <form method="POST" class="login">
                         <fieldset class="grupo" class="login">   

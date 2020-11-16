@@ -25,15 +25,17 @@
                                     <th>Ano</th>
                                     <th>Semestre</th>
                                     <th>Visualizar</th>
+                                    <th>Apagar</th>
                                 </tr>
                                 <tr>
                                     <?php     
                                     $busca = $b->buscarTabela();
                                     foreach ($busca as $dado) {?>   
                                 </tr>
-                                        <td><?php echo $dado["semestre"]; ?></td>
-                                        <td><?php echo $dado["ano"];?></td>
+                                        <td><?php echo $dado["ano"]; ?></td>
+                                        <td><?php echo $dado["semestre"];?></td>
                                         <td><?php echo "<a href=\"bsl/tabela/". $dado["arquivo"]."\" target='blank' >"?><button type="button"><img src="img/visu.png"></button></td>
+                                        <td><button id="excluir" type="button" data-toggle="modal" data-target="#excluirTab" data-whateverid="<?php echo $dado['id']; ?>"><img src="img/lixo.png"></button></td>
                                     <?php  } ?>
                             </thead>
                             <tbody>
@@ -49,7 +51,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Cadastrar Tabela Semestral</h5>
+                            <h4 class="modal-title" id="exampleModalLabel">Cadastrar Tabela Semestral</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -129,6 +131,28 @@
                 }
             }
             ?>
+            <div class="modal fade" id="excluirTab" tabindex="-1" aria-labelledby="exampleModalLabelExc" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabelExc">Excluir Tabela</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form method="POST" action="http://localhost/teste/apagar-tabela.php" enctype="multipart/form-data">
+                                <input type="hidden" name="id" id="id"></input>
+                                <h5>Deseja realmente apagar esta tabela?</h5>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+                                    <button type="submit" class="btn btn-danger">Excluir Tabela</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
             <script src="js/bootstrap.min.js"></script>
             <script type="text/javascript">
@@ -140,6 +164,13 @@
               var modal = $(this)
               modal.find('.modal-body input').val(recipient)
               modal.find('.modal-body input').val(recipient)
+            })
+            $('#excluirTab').on('show.bs.modal', function(event){
+                var button = $(event.relatedTarget)
+                var recipientid = button.data('whateverid')
+
+                var modal = $(this)
+                modal.find('#id').val(recipientid)
             })
             </script>
     
