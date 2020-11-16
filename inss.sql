@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 19/10/2020 às 23:24
--- Versão do servidor: 10.4.13-MariaDB
--- Versão do PHP: 7.4.8
+-- Tempo de geração: 16-Nov-2020 às 23:55
+-- Versão do servidor: 10.4.14-MariaDB
+-- versão do PHP: 7.4.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,21 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `arquivos`
---
-
-CREATE TABLE `arquivos` (
-  `id` int(11) NOT NULL,
-  `nome` varchar(50) DEFAULT NULL,
-  `titulo` varchar(50) DEFAULT NULL,
-  `conteudo` mediumblob DEFAULT NULL,
-  `tipo` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `cad_bsl`
+-- Estrutura da tabela `cad_bsl`
 --
 
 CREATE TABLE `cad_bsl` (
@@ -49,7 +35,7 @@ CREATE TABLE `cad_bsl` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Despejando dados para a tabela `cad_bsl`
+-- Extraindo dados da tabela `cad_bsl`
 --
 
 INSERT INTO `cad_bsl` (`id_bsl`, `numero`, `data`, `arquivo`) VALUES
@@ -84,12 +70,33 @@ INSERT INTO `cad_bsl` (`id_bsl`, `numero`, `data`, `arquivo`) VALUES
 (29, 29, '2020-02-11', 'BSL GEXJFR Nº 29 de 11 de fevereiro de 2020.pdf'),
 (30, 30, '2020-02-12', 'BSL GEXJFR Nº 30 de 12 de fevereiro de 2020.pdf'),
 (31, 31, '2020-02-13', 'BSL GEXJFR Nº 31 de 13 de fevereiro de 2020.pdf'),
-(32, 32, '2020-02-14', 'BSL GEXJFR Nº 32 de 14 de fevereiro de 2020.pdf');
+(34, 32, '2020-02-14', 'BSL GEXJFR Nº 32 de 14 de fevereiro de 2020.pdf');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `users`
+-- Estrutura da tabela `tabela_bsl`
+--
+
+CREATE TABLE `tabela_bsl` (
+  `id` int(11) NOT NULL,
+  `semestre` int(2) NOT NULL,
+  `ano` year(4) NOT NULL,
+  `arquivo` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `tabela_bsl`
+--
+
+INSERT INTO `tabela_bsl` (`id`, `semestre`, `ano`, `arquivo`) VALUES
+(2, 1, 2020, 'Tabela BSL do 01º semestre de 2020.pdf'),
+(4, 2, 2020, 'Tabela BSL do 2º semestre de 2020.pdf');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `users`
 --
 
 CREATE TABLE `users` (
@@ -102,55 +109,55 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Despejando dados para a tabela `users`
+-- Extraindo dados da tabela `users`
 --
 
 INSERT INTO `users` (`id_user`, `nome`, `email`, `cargo`, `username`, `senha`) VALUES
-(4, 'Letícia Otoni Clementino', 'leticia.clementino@inss.gov.br', 'Estagiário', 'leticia.clementino', '7892bcc981f98c7b73bd6ccc93deae48');
+(1, 'Administrador', 'leticiaotoni.si@gmail.com', 'Admin', 'admin', '993838a0a360b84522b021aec6526bb2');
 
 --
--- Índices de tabelas apagadas
+-- Índices para tabelas despejadas
 --
 
 --
--- Índices de tabela `arquivos`
---
-ALTER TABLE `arquivos`
-  ADD PRIMARY KEY (`id`);
-
---
--- Índices de tabela `cad_bsl`
+-- Índices para tabela `cad_bsl`
 --
 ALTER TABLE `cad_bsl`
   ADD PRIMARY KEY (`id_bsl`);
 
 --
--- Índices de tabela `users`
+-- Índices para tabela `tabela_bsl`
+--
+ALTER TABLE `tabela_bsl`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- AUTO_INCREMENT de tabelas apagadas
+-- AUTO_INCREMENT de tabelas despejadas
 --
-
---
--- AUTO_INCREMENT de tabela `arquivos`
---
-ALTER TABLE `arquivos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `cad_bsl`
 --
 ALTER TABLE `cad_bsl`
-  MODIFY `id_bsl` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id_bsl` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+
+--
+-- AUTO_INCREMENT de tabela `tabela_bsl`
+--
+ALTER TABLE `tabela_bsl`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
